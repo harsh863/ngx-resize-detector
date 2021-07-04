@@ -1,27 +1,70 @@
-# NgxResizeDetector
+<div align="center">
+    <img src="https://img.icons8.com/color/96/000000/resize.png"/>
+</div>
+<h1 align="center">ngxResizeDetector</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+<p align="center"><b><i>Angular directive to listen all resize events on the host element.</i></b></p>
+<p align="center">
+		<a href="https://www.npmjs.com/package/ngx-resize-detector"><img alt="NPM Version" src="https://img.shields.io/npm/v/ngx-resize-detector.svg" height="20"/></a>
+    <a href="https://www.npmjs.com/package/ngx-resize-detector"><img alt="Total downloads" src="https://img.shields.io/npm/dt/ngx-resize-detector.svg" height="20"/></a>
+</p>
 
-## Development server
+## Demo:-
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Here is the working demonstration of package: https://ngx-resize-detector-demo.vercel.app/
 
-## Code scaffolding
+## Installation:-
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1.&nbsp; Download the package from npm using: `npm i ngx-resize-detector`.
 
-## Build
+2.&nbsp; Add `NgxResizeDetectorModule` into your NgModule imports:
+```ts
+import {NgxResizeDetectorModule} from "ngx-resize-detector";
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  ...
+  imports: [ NgxResizeDetectorModule, ... ],
+  ...
+})
+```
 
-## Running unit tests
+3.&nbsp; Add `ngxResizeDetector` on any element like this:
+```angular2html
+<div ngxResizeDetector
+     [debounce]="<DEBOUNCE_TIME(in milliseconds, default = 0)>"
+     [delay]="<DELAY_TIME(in milliseconds, default = 0)>" 
+     (onDimensionsChange)="onDimensionChange($event)">
+  ...
+</div>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4.&nbsp; Now in your `component.ts`:
+```ts
+import {ElementDimensions} from "ngx-resize-detector";
+...
+onDimensionChange(event: ElementDimensions) {
+ // post resize action goes here.
+}
+```
 
-## Running end-to-end tests
+## Interface:-
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```ts
+interface ElementDimensions {
+  offsetWidth: number;
+  offsetHeight: number;
+  clientWidth: number;
+  clientHeight: number;
+}
+```
 
-## Further help
+## Author:-
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<img src="https://avatars.githubusercontent.com/u/53868138?s=400&u=af1bb288033e40fde4f68cfc6ed4b10f7a696316&v=4" alt="Harsh Mittal Github" width="100"/>
+
+**[Harsh Mittal](https://github.com/harsh863/)**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/harsh-mittal-516706184/)
+[![StackOverflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/12774193/harsh-mittal)
+[![DEV](https://img.shields.io/badge/DEV-%23000000.svg?logo=dev.to&logoColor=white)](https://dev.to/harsh863)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=facebook&logoColor=white)](https://www.facebook.com/harsh.mittal.92351995)
