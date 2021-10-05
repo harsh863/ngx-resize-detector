@@ -23,9 +23,8 @@ export class NgxResizeDetectorDirective implements OnInit, OnDestroy {
     this._syncElementDimensions();
   }
 
-  @Input() distinctUntilChanged(value: ElementDimension | ElementDimension[]) {
+  @Input() set distinctUntilChanged(value: ElementDimension | ElementDimension[]) {
     this._distinctUntilChanged = value;
-    this._syncElementDimensions();
   }
 
   @Output() onDimensionsChange = new Subject<ElementDimensions>();
@@ -131,7 +130,7 @@ export interface ElementDimensions {
 
 export enum ElementDimension {
   CLIENT_HEIGHT = 'clientHeight',
-  CLIENT_WIDTH = 'offsetWidth',
+  CLIENT_WIDTH = 'clientWidth',
   OFFSET_HEIGHT = 'offsetHeight',
-  OFFSET_WIDTH = 'clientWidth'
+  OFFSET_WIDTH = 'offsetWidth'
 }
