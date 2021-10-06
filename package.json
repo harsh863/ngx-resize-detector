@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "rm -rf dist && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "publish": "npm run build && cd dist/ngx-resize-detector && npm publish"
   },
   "private": false,
   "dependencies": {
