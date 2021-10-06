@@ -9,7 +9,7 @@
     <a href="https://www.npmjs.com/package/ngx-resize-detector"><img alt="Total downloads" src="https://img.shields.io/npm/dt/ngx-resize-detector.svg" height="20"/></a>
 </p>
 
-## Demo:- 
+## Demo:-
 
 Here is the working demonstration of package: https://ngx-resize-detector-demo.vercel.app/
 
@@ -17,22 +17,24 @@ Here is the working demonstration of package: https://ngx-resize-detector-demo.v
 
 1.&nbsp; Download the package from npm using: `npm i ngx-resize-detector`.
 
-2.&nbsp; Add `NgxResizeDetectorModule` into your NgModule imports: 
+2.&nbsp; Add `NgxResizeDetectorModule` into your NgModule imports:
 ```ts
 import {NgxResizeDetectorModule} from "ngx-resize-detector";
 
 @NgModule({
   ...
-  imports: [ NgxResizeDetectorModule, ... ],
-  ...
+    imports: [ NgxResizeDetectorModule, ... ],
+...
 })
 ```
 
-3.&nbsp; Add `ngxResizeDetector` on any element like this: 
+3.&nbsp; Add `ngxResizeDetector` on any element like this:
 ```angular2html
 <div ngxResizeDetector
      [debounce]="<DEBOUNCE_TIME(in milliseconds, default = 0)>"
-     [delay]="<DELAY_TIME(in milliseconds, default = 0)>" 
+     [delay]="<DELAY_TIME(in milliseconds, default = 0)>"
+     [disabled]="<LISTEN_EVENTS_OR_NOT(boolean, default = false)>"
+     [distinctUntilChanged]="<LISTEN_SPECIFIC_DIMENSION(ElementDimension | ElementDimension[], default = [] { listen_to_all })>"
      (onDimensionsChange)="onDimensionChange($event)">
   ...
 </div>
@@ -47,7 +49,7 @@ onDimensionChange(event: ElementDimensions) {
 }
 ```
 
-## Interface:- 
+## Interface:-
 
 ```ts
 interface ElementDimensions {
@@ -55,6 +57,17 @@ interface ElementDimensions {
   offsetHeight: number;
   clientWidth: number;
   clientHeight: number;
+}
+```
+
+## Enum:-
+
+```ts
+enum ElementDimension {
+  CLIENT_HEIGHT = 'clientHeight',
+  CLIENT_WIDTH = 'clientWidth',
+  OFFSET_HEIGHT = 'offsetHeight',
+  OFFSET_WIDTH = 'offsetWidth'
 }
 ```
 

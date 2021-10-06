@@ -33,6 +33,8 @@ import {NgxResizeDetectorModule} from "ngx-resize-detector";
 <div ngxResizeDetector
      [debounce]="<DEBOUNCE_TIME(in milliseconds, default = 0)>"
      [delay]="<DELAY_TIME(in milliseconds, default = 0)>" 
+     [disabled]="<LISTEN_EVENTS_OR_NOT(boolean, default = false)>"
+     [distinctUntilChanged]="<LISTEN_SPECIFIC_DIMENSION(ElementDimension | ElementDimension[], default = [] { listen_to_all })>"
      (onDimensionsChange)="onDimensionChange($event)">
   ...
 </div>
@@ -55,6 +57,17 @@ interface ElementDimensions {
   offsetHeight: number;
   clientWidth: number;
   clientHeight: number;
+}
+```
+
+## Enum:-
+
+```ts
+enum ElementDimension {
+  CLIENT_HEIGHT = 'clientHeight',
+  CLIENT_WIDTH = 'clientWidth',
+  OFFSET_HEIGHT = 'offsetHeight',
+  OFFSET_WIDTH = 'offsetWidth'
 }
 ```
 
