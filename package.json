@@ -7,7 +7,7 @@
     "build": "rm -rf dist && ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "publish": "npm run build && cd dist/ngx-resize-detector && npm publish"
+    "publish": "cd projects/ngx-resize-detector && npm version patch && cd ../../ && npm run build && cd dist/ngx-resize-detector && npm publish"
   },
   "private": false,
   "dependencies": {
