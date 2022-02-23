@@ -23,8 +23,8 @@ import {NgxResizeDetectorModule} from "ngx-resize-detector";
 
 @NgModule({
   ...
-  imports: [ NgxResizeDetectorModule, ... ],
-  ...
+    imports: [ NgxResizeDetectorModule, ... ],
+...
 })
 ```
 
@@ -32,7 +32,7 @@ import {NgxResizeDetectorModule} from "ngx-resize-detector";
 ```angular2html
 <div ngxResizeDetector
      [debounce]="<DEBOUNCE_TIME(in milliseconds, default = 0)>"
-     [delay]="<DELAY_TIME(in milliseconds, default = 0)>" 
+     [delay]="<DELAY_TIME(in milliseconds, default = 0)>"
      [disabled]="<LISTEN_EVENTS_OR_NOT(boolean, default = false)>"
      [distinctUntilChanged]="<LISTEN_SPECIFIC_DIMENSION(ElementDimension | ElementDimension[], default = [] { listen_to_all })>"
      (onDimensionsChange)="onDimensionChange($event)">
@@ -81,3 +81,5 @@ enum ElementDimension {
 [![StackOverflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?logo=stack-overflow&logoColor=white)](https://stackoverflow.com/users/12774193/harsh-mittal)
 [![DEV](https://img.shields.io/badge/DEV-%23000000.svg?logo=dev.to&logoColor=white)](https://dev.to/harsh863)
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=facebook&logoColor=white)](https://www.facebook.com/harsh863)
+
+<a href="https://www.buymeacoffee.com/harsh863" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
